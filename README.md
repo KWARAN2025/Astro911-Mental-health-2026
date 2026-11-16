@@ -86,7 +86,6 @@ Keyboard ──► index.html (web page) ◄──socket.io──► main.py (Py
 1. **Open the project** in [Arduino App Lab](https://www.arduino.cc/) on your UNO Q.
 2. **Add the bricks:** click **+** next to **Bricks** and add **WebUI - HTML** and **Large Language Model (LLM)**.
 3. **Download the AI model:** in the LLM brick's **AI models** tab, choose **Qwen 3.5 0.8B**. It's the model on the UNO Q that supports tools. The board needs internet for this one-time download.
-4. **(Optional) Add the ElevenLabs voice:** create an API key at [elevenlabs.io](https://elevenlabs.io) with **Text to Speech** access, then paste it into `ELEVENLABS_API_KEY` in `python/main.py`. Never commit your real key to GitHub.
 5. **Run the app:** click **Run** and wait for `ASTRO's AI is loaded and ready` in the **Python** tab.
 6. **Open the page:** go to `http://<board-IP>:7000` in a browser and click once on the page to allow sound.
 
