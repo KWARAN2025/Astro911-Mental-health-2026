@@ -101,16 +101,20 @@ Keyboard ──► index.html (web page) ◄──socket.io──► main.py (Py
 | Check-in | **1–9**, or **0** for 10 · **← →** change · **Enter** next · **Backspace** previous |
 | Talk to ASTRO | Type · **Enter** send · **↑ ↓** example messages |
 | Breathing | **Enter** stop |
-| Grounding | **Enter** noticed one · **→** next sense |
+| Grounding | **Enter** move to next one· **Space** to fill in |
 | NASA data | Type · **Enter** search · **↑ ↓** example searches |
 
 ---
 
-## NASA data
 
-- **data.nasa.gov CKAN API:** free and open, no key needed. The explorer searches NASA's public dataset catalog live.
-- **Published NASA research:** for example, astronauts on six-month ISS missions averaged about 6.5 hours of sleep a night, even with an 8.5-hour scheduled sleep window.
-- **NASA Life Sciences Data Archive (future):** individual astronaut sleep and heart rate data is protected medical data, available to researchers on request.
+## Data
+
+- **PhysioNet heart data (live):** Astro911 uses real heartbeat recordings from the open PhysioNet database "RR interval time series from healthy subjects." It's free, with no key or sign-up needed. The Arduino downloads the adult recordings, works out each person's heart rate and heart rate variability (HRV), and shows the most relaxed, middle, most strained or a random real person.
+  - Dataset: https://www.physionet.org/content/rr-interval-healthy-subjects/
+  - Files used: https://physionet.org/files/rr-interval-healthy-subjects/1.0.0/
+- **HRV analysis:** the app calculates heart rate, RMSSD, SDNN and pNN50 (the same time-domain measures used in NeuroKit2 and pyHRV) in plain Python on the board, with no cloud.
+- **Own heart sensor (future):** a MAX30102 finger sensor or a smartwatch could send the astronaut's own heartbeats into the same code, so ASTRO can notice stress early.
+- **Credit:** Irurzun et al., "RR interval time series from healthy subjects," PhysioNet, CC BY 4.0.
 
 ---
 
@@ -122,7 +126,7 @@ Keyboard ──► index.html (web page) ◄──socket.io──► main.py (Py
 - A fully offline voice (such as Piper)
 - A stronger board for a larger, more accurate AI model
 - Access to NASA's Life Sciences Data Archive
-- Expert medical review, more languages, and a 3D-printed case
+- Expert medical review, more languages, and a enclosed  box to keep everything in
 
 ## Challenges for real spaceflight
 
@@ -132,7 +136,7 @@ Before flying, the device would need safety certification (materials, battery, e
 
 ## Built with
 
-Arduino UNO Q · Arduino App Lab · Python · HTML · CSS · JavaScript · Socket.IO · Qwen 3.5 0.8B · data.nasa.gov API · ElevenLabs API
+Arduino UNO Q · Arduino App Lab · Python · HTML · CSS · JavaScript · Socket.IO · Qwen 3.5 0.8B · PhysioNet heart data 
 
 ## Acknowledgments
 
